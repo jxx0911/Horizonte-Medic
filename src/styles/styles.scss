@@ -1,4 +1,11 @@
 @import "./base/settings";
+@import "./base/base";
 
 //components
-@import "";
+
+//header
+@import "./components/header/header";
+@import "./components/header/logo";
+@import "./components/header/nav";
+@import "./components/header/navResp";
+@import "./components/header/preheader";

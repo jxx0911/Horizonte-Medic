@@ -1,0 +1,15 @@
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: #ffffff;
+	z-index: 1000;
+}
