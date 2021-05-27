@@ -5,7 +5,21 @@
 
 //header
 @import "./components/header/header";
-@import "./components/header/logo";
-@import "./components/header/nav";
-@import "./components/header/navResp";
 @import "./components/header/preheader";
+
+//home
+@import "./components/home/slider";
+@import "./components/home/hye";
+@import "./components/home/aboutus";
+
+//main
+@import "./components/main/logo";
+@import "./components/main/nav";
+@import "./components/main/navResp";
+
+//section
+@import "./components/section/covid";
+@import "./components/section/contact";
+
+//footer
+@import "./components/footer/footer";

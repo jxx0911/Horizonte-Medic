@@ -1,19 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Logo } from "./Logo";
 
 export const Nav = () => {
 	return (
-		<nav className="navegacion">
+		<nav className="navegacion contenedor ">
+			<Logo />
 			<ul>
 				<li>
-					<Link className="nav-item active" to="/">
+					<NavLink exact activeClassName="active" className="nav-item" to="/">
 						Inicio
-					</Link>
+					</NavLink>
 				</li>
 				<li>
-					<Link className="nav-item" to="/nosotros" id="btnNosotros">
+					<NavLink className="nav-item" to="/nosotros" id="btnNosotros">
 						Nosotros
-					</Link>
+					</NavLink>
 				</li>
 				<li>
 					<a
@@ -30,19 +32,19 @@ export const Nav = () => {
 					</a>
 					<ul>
 						<li>
-							<Link to="/servicios-generales" id="btnSG">
+							<NavLink to="/servicios-generales" id="btnSG">
 								Servicios Generales
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/salud-ocupacional" id="btnSO">
+							<NavLink to="/salud-ocupacional" id="btnSO">
 								Salud Ocupacional
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/laboratorio" id="btnLab">
+							<NavLink to="/laboratorio" id="btnLab">
 								Laboratorio
-							</Link>
+							</NavLink>
 						</li>
 					</ul>
 				</li>
@@ -61,36 +63,36 @@ export const Nav = () => {
 					</a>
 					<ul>
 						<li>
-							<Link to="/sede-pierola" id="btnPierola">
+							<NavLink to="/sede-pierola" id="btnPierola">
 								Sede N. Pierola
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/sede-stodominguito" id="btnSD">
+							<NavLink to="/sede-stodominguito" id="btnSD">
 								Sede Sto. Dominguito
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/sede-huamachuco" id="btnH">
+							<NavLink to="/sede-huamachuco" id="btnH">
 								Sede Huamachuco
-							</Link>
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/sede-huancayo" id="btnHy">
+							<NavLink to="/sede-huancayo" id="btnHy">
 								Sede Huancayo
-							</Link>
+							</NavLink>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<Link className="nav-item" to="/cotizar">
+					<NavLink className="nav-item" to="/cotizar">
 						Cotizar
-					</Link>
+					</NavLink>
 				</li>
 				<li>
-					<Link className="login" to="/reserva-cita" id="rCita">
+					<NavLink className="login" to="/reserva-cita" id="rCita">
 						Reservar tu cita
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
