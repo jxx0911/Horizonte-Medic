@@ -5,8 +5,13 @@ import { Logo } from "./Logo";
 import { NavResp } from "./NavResp";
 
 export const Nav = () => {
+	window.addEventListener("scroll", () => {
+		let barra = document.querySelector("#barra");
+		barra.classList.toggle("sticky", window.scrollY > 0);
+	});
+
 	return (
-		<>
+		<div className="barra" id="barra">
 			<nav className="navegacion contenedor ">
 				<Logo />
 				<ul>
@@ -100,6 +105,6 @@ export const Nav = () => {
 				</ul>
 			</nav>
 			<NavResp />
-		</>
+		</div>
 	);
 };

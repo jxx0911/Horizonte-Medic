@@ -1,8 +1,23 @@
+.barra {
+	width: 100%;
+	position: fixed;
+	top: 4rem;
+	height: 7rem;
+	transition: all 0.3s ease;
+	background: #fff;
+	margin: 0 auto;
+	z-index: 20;
+}
+
+.barra.sticky {
+	top: 0rem;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
 .navegacion {
 	display: flex;
-	position: sticky;
-	transition: all 0.3s ease;
-	z-index: 20;
 }
 
 .navegacion ul {
@@ -76,4 +91,36 @@
 
 .navegacion ul li.nav-r {
 	display: none;
+}
+
+@media screen and (max-width: 860px) {
+	.navegacion {
+		top: 0;
+	}
+	.navegacion .burguer {
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		right: 1rem;
+		top: 1.5rem;
+		padding-top: 0.4rem;
+		border-radius: 10px;
+		font-size: 2rem;
+		background: #234187;
+		color: #fff;
+		width: 45px;
+		height: 45px;
+		text-align: center;
+		transition: right 0.4s ease;
+		margin-right: 6px;
+	}
+	.navegacion .burguer.click {
+		right: 250px;
+	}
+	.navegacion .burguer.click i::before {
+		content: '<i class="fas fa-times"></i>';
+	}
+	.navegacion ul {
+		display: none;
+	}
 }

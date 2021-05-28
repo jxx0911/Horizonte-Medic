@@ -9,7 +9,6 @@ import { Pierola } from "../components/sedes/Pierola";
 import { StoDomingo } from "../components/sedes/StoDomingo";
 import { Huamachuco } from "../components/sedes/Huamachuco";
 import { Huancayo } from "../components/sedes/Huancayo";
-import { Cotizar } from "../components/cotizar/Cotizar";
 import { Reserve } from "../components/reserve/Reserve";
 import { Home } from "../components/home/Home";
 
@@ -17,7 +16,7 @@ export const HMWebRouter = () => {
 	return (
 		<Router>
 			<Nav />
-			<div className="switch">
+			<div className="switch" style={{ position: "relative", top: "7rem" }}>
 				<Switch>
 					<Route path="/nosotros">
 						<About />
@@ -42,9 +41,6 @@ export const HMWebRouter = () => {
 					</Route>
 					<Route path="/sede-huancayo">
 						<Huancayo />
-					</Route>
-					<Route path="/cotizar">
-						<Cotizar />
 					</Route>
 					<Route path="/reserva-cita">
 						<Reserve />

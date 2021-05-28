@@ -2,17 +2,17 @@ import React from "react";
 
 export const Covid = () => {
 	return (
-		<section class="covid">
-			<div class="covid-container">
-				<div class="covid-title">
+		<section className="covid">
+			<div className="covid-container">
+				<div className="covid-title">
 					<h2>
 						{" "}
 						<b>COVID-19</b> <br /> Pruebas
 					</h2>
 				</div>
-				<div class="covid-pruebas">
+				<div className="covid-pruebas">
 					<ul>
-						<li id="btnRapida" class="covid-here">
+						<li id="btnRapida" className="covid-here">
 							Rápida
 						</li>
 						<li id="btnSerologica">Serológica</li>
@@ -21,11 +21,11 @@ export const Covid = () => {
 					</ul>
 				</div>
 			</div>
-			<div class="covid-info">
-				<div id="covid-container" class="covid-container">
-					<div class="covid-info-txt">
+			<div className="covid-info">
+				<div id="covid-container" className="covid-container">
+					<div className="covid-info-txt">
 						<h3>PRUEBA RÁPIDA</h3>
-						<div class="covid-info-txt-container">
+						<div className="covid-info-txt-container">
 							<p>
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 								Placeat ab deserunt voluptatum dolores optio! Corporis vel, enim
@@ -34,7 +34,7 @@ export const Covid = () => {
 							</p>
 						</div>
 					</div>
-					<div class="covid-info-img">
+					<div className="covid-info-img">
 						{/* <!-- <img src="../img/covid/rapida.jpg" alt=""> --> */}
 					</div>
 				</div>

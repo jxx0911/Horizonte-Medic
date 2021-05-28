@@ -42,3 +42,45 @@
 		padding-right: 2.5px;
 	}
 }
+
+@media screen and (max-width: 1115px) {
+	.pre-header ul li {
+		font-size: 0.7087rem;
+	}
+	.pre-header ul li i {
+		font-size: 0.902rem;
+	}
+	.p-h-contenedor {
+		min-width: 835px;
+	}
+
+	.contenedor {
+		min-width: 835px;
+	}
+	.barra.sticky {
+		top: 0;
+		margin: 0 auto;
+		background: #fff;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	}
+	.navegacion ul {
+		font-size: 0.8;
+	}
+	.navegacion ul > li > a {
+		font-size: 0.8rem;
+		margin: 10px 5px;
+		border-radius: 25px;
+		padding: 15px 12px;
+	}
+	.logo-img {
+		width: 15rem;
+		height: 90%;
+		padding: 10px 0;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.pre-header {
+		display: none;
+	}
+}
