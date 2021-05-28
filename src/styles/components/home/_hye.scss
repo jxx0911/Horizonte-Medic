@@ -53,3 +53,23 @@
 	font-weight: 500;
 	color: #234187;
 }
+
+@media screen and (max-width: 860px) {
+	.hye-container {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.hye .caja-horario,
+	.hye .caja-emergencia {
+		height: 40%;
+		margin: 10px 0;
+	}
+	.h3-horario,
+	.h3-emergencia {
+		font-size: 1.4rem;
+	}
+	.p-horario,
+	.p-emergencia {
+		font-size: 1.2rem;
+	}
+}

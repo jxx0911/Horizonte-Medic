@@ -96,7 +96,7 @@
 	height: 100%;
 	box-shadow: 0 0 20px black;
 	border-radius: 26px;
-	background-image: url("../../../img/covid/rapida.jpg"); 
+	background-image: url("../../../img/covid/rapida.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -108,4 +108,91 @@
 	height: 100%;
 	object-fit: cover;
 	border-radius: 26px;
+}
+
+@media screen and (max-width: 1115px) {
+	.covid-pruebas ul li {
+		flex: 0 0 10rem;
+		margin: 5px 10px;
+		padding: 15px 0;
+		text-align: center;
+		font-size: 1.3rem;
+	}
+	.covid-info .covid-container {
+		flex-direction: column;
+		height: 100vh;
+	}
+	.covid-info-txt {
+		width: 100%;
+		height: 15rem;
+		order: 1;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	.covid-info-img {
+		width: 100%;
+		height: 100%;
+		order: 2;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.covid {
+		padding-top: 5rem;
+	}
+	.covid-info {
+		height: 80vh;
+	}
+	.covid-info .covid-container {
+		height: 100%;
+	}
+	.covid-title h2 {
+		font-size: 1.5rem;
+	}
+	.covid-title h2 b {
+		font-size: 3.3rem;
+	}
+	.covid-pruebas ul {
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	.covid-pruebas ul li {
+		flex: 0 0 14rem;
+		margin: 5px 10px;
+		padding: 15px 0;
+		text-align: center;
+		font-size: 1.3rem;
+	}
+	.covid-info-txt {
+		order: 2;
+		height: 20rem;
+	}
+	.covid-info-txt p {
+		height: 100%;
+	}
+	.covid-info-img {
+		order: 1;
+		height: 40rem;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.covid-pruebas {
+		min-width: 200px;
+	}
+	.covid-info {
+		height: 80vh;
+	}
+	.covid-info .covid-container {
+		height: 100%;
+	}
+	.covid-info-img {
+		height: 20rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.covid-info-img {
+		height: 10rem;
+	}
 }

@@ -64,3 +64,21 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+@media screen and (max-width: 860px) {
+	.we-container {
+		flex-direction: column;
+		height: 100%;
+	}
+	.we-info,
+	.we-img {
+		width: 100%;
+	}
+	.we-info {
+		align-items: center;
+	}
+	.we-info h2,
+	.we-info p {
+		text-align: center;
+	}
+}

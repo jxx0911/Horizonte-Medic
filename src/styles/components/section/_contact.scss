@@ -28,7 +28,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-image: url("../../../img/blur-hospital.jpg"); 
+	background-image: url("../../../img/blur-hospital.jpg");
 	background-size: cover;
 	background-position: center center;
 }
@@ -194,4 +194,50 @@ form.form_contact input[type="button"]:hover {
 	border: 2px solid #b14141;
 	cursor: pointer;
 	float: right;
+}
+
+@media screen and (max-width: 860px) {
+	.contacto {
+		flex-direction: column;
+		height: 52rem;
+	}
+	form.form_contact {
+		width: 80%;
+		padding: 50px 20px;
+	}
+	.cantact_info {
+		width: 100%;
+	}
+	.info_title {
+		margin-top: 3rem;
+	}
+	form.form_contact {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 464px) {
+	.contacto {
+		margin-top: 0;
+		height: 48rem;
+	}
+	form.form_contact {
+		padding: 50px 0;
+	}
+	form.form_contact h2 {
+		font-size: 20px;
+	}
+	form.form_contact label {
+		font-size: 12px;
+	}
+	form.form_contact input[type="button"] {
+		width: 120px;
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.info_title p {
+		display: none;
+	}
 }

@@ -2,31 +2,31 @@ import React from "react";
 
 export const NavResp = () => {
 	return (
-		<nav class="nav-resp">
+		<nav className="nav-resp">
 			<ul>
 				<li>
 					<a href="../index.html">
-						<i class="fas fa-home"></i>Inicio
+						<i className="fas fa-home"></i>Inicio
 					</a>
 				</li>
 				<li>
 					<a href="../views/loginUser.html">
-						<i class="fas fa-user"></i>Mi cuenta
+						<i className="fas fa-user"></i>Mi cuenta
 					</a>
 				</li>
 				<li>
 					<a href="#" id="rCitaR">
-						<i class="fas fa-calendar-check"></i>Reservar Cita
+						<i className="fas fa-calendar-check"></i>Reservar Cita
 					</a>
 				</li>
 				<li>
 					<a href="#contacto">
-						<i class="fas fa-dollar-sign"></i>Cotizar
+						<i className="fas fa-dollar-sign"></i>Cotizar
 					</a>
 				</li>
 				<li>
 					<a href="#Nosotros" id="btnNosotrosR">
-						<i class="fas fa-hospital-symbol"></i>Nosotros
+						<i className="fas fa-hospital-symbol"></i>Nosotros
 					</a>
 				</li>
 				<li>
@@ -34,11 +34,11 @@ export const NavResp = () => {
 						style={{ cursor: "default" }}
 						href="#Servicios"
 						onclick="return false;"
-						class="serv-resp"
+						className="serv-resp"
 					>
-						Servicios<i class="fas fa-chevron-down arrow first"></i>
+						Servicios<i className="fas fa-chevron-down arrow first"></i>
 					</a>
-					<ul class="serv-show">
+					<ul className="serv-show">
 						<li>
 							<a href="#ServiciosGenerales" id="btnSGR">
 								Servicios Generales
@@ -61,11 +61,11 @@ export const NavResp = () => {
 						style={{ cursor: "default" }}
 						href="#"
 						onclick="return false;"
-						class="sede-resp"
+						className="sede-resp"
 					>
-						Sedes<i class="fas fa-chevron-down arrow second"></i>
+						Sedes<i className="fas fa-chevron-down arrow second"></i>
 					</a>
-					<ul class="sede-show">
+					<ul className="sede-show">
 						<li>
 							<a href="#Pierola" id="btnPierolaR">
 								Sede N. Pierola
