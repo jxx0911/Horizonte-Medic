@@ -1,0 +1,51 @@
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nosotros-title {
+    width: 100%;
+    height: 30vh;
+    background: url("../../../img/nosotros/nosotros.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nosotros-title h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 4rem;
+}
+
+.nosotros-logo {
+    width: 100%;
+    display: flex;
+}
+
+.nosotros-logo-container {
+    max-width: 45vw;
+    min-width: 270px;
+    margin: 0 auto;
+}
+
+.nosotros-logo-container img {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.nosotros-info {
+    width: 100%;
+    display: flex;
+}
+
+.nosotros-info-container {
+    max-width: 75vw;
+    margin: 0 auto;
+    text-align: center;
+}

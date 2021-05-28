@@ -1,0 +1,49 @@
+.myv {
+    margin-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    color: #234187;
+}
+
+.mision,
+.vision {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.mision-container,
+.vision-container {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+}
+
+.mision-img img,
+.vision-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mision-info,
+.vision-info {
+    display: flex;
+    flex-direction: column;
+    padding: 75px;
+}
+
+.mision-info,
+.mision-img,
+.vision-img,
+.vision-info {
+    width: 50%;
+}
+
+.mision-info h3,
+.vision-info h3 {
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+}
