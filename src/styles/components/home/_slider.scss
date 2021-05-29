@@ -55,3 +55,30 @@
 .img-responsive {
 	display: none;
 }
+
+@media screen and (max-width: 860px) {
+	.slider {
+		z-index: -1;
+	}
+	.slider-contenedor {
+		height: 350px;
+	}
+	.slider__btn {
+		top: 11%;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.slider__btn {
+		top: 13%;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.img-responsive {
+		display: initial;
+	}
+	.img-alfa {
+		display: none;
+	}
+}

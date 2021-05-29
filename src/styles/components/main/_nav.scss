@@ -93,8 +93,30 @@
 	display: none;
 }
 
+@media screen and (max-width: 1115px) {
+	.barra .contenedor {
+		min-width: 835px;
+	}
+	.barra.sticky {
+		top: 0;
+		margin: 0 auto;
+		background: #fff;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	}
+
+	.navegacion ul {
+		font-size: 0.8;
+	}
+	.navegacion ul > li > a {
+		font-size: 0.8rem;
+		margin: 10px 5px;
+		border-radius: 25px;
+		padding: 15px 12px;
+	}
+}
+
 @media screen and (max-width: 860px) {
-	.navegacion {
+	.barra {
 		top: 0;
 	}
 	.navegacion .burguer {
