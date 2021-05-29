@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const NavResp = () => {
+	const [click, setClick] = useState(false);
+
+	const handleClick = () => setClick(!click);
+
 	return (
-		<nav className="nav-resp">
+		<nav onClick={handleClick} className={click ? "nav-resp.show" : "nav-resp"}>
 			<ul>
 				<li>
 					<a href="../index.html">
