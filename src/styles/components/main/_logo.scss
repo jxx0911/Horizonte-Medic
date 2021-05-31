@@ -21,6 +21,34 @@
 	}
 }
 
+@media screen and (max-width: 860px) {
+	.burguer {
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		right: 0.5rem;
+		top: 2.3rem;
+		padding-top: 0.4rem;
+		border-radius: 10px;
+		font-size: 2rem;
+		background: #234187;
+		color: #fff;
+		width: 45px;
+		height: 45px;
+		text-align: center;
+		transition: right 0.4s ease;
+		margin-right: 6px;
+	}
+
+	.burguer.click {
+		right: 250px;
+	}
+
+	.burguer.click i::before {
+		content: '<i class="fas fa-times"></i>';
+	}
+}
+
 /* @media screen and (max-width: 380px) {
 	.logo-img {
 		width: 1rem;

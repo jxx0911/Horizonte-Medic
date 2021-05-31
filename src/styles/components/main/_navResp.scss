@@ -12,6 +12,7 @@
 		height: 100%;
 		background: #234187;
 		transition: right 0.4s ease;
+		top: 0;
 	}
 	.nav-resp.show {
 		right: 0;
@@ -19,6 +20,7 @@
 	.nav-resp ul {
 		height: 100%;
 		width: 100%;
+		right: 50px;
 	}
 	.nav-resp ul li,
 	.nav-resp ul li a {

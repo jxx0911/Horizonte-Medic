@@ -119,29 +119,7 @@
 	.barra {
 		top: 0;
 	}
-	.navegacion .burguer {
-		cursor: pointer;
-		display: block;
-		position: absolute;
-		right: 0.5rem;
-		top: 2.3rem;
-		padding-top: 0.4rem;
-		border-radius: 10px;
-		font-size: 2rem;
-		background: #234187;
-		color: #fff;
-		width: 45px;
-		height: 45px;
-		text-align: center;
-		transition: right 0.4s ease;
-		margin-right: 6px;
-	}
-	.navegacion .burguer.click {
-		right: 250px;
-	}
-	.navegacion .burguer.click i::before {
-		content: '<i class="fas fa-times"></i>';
-	}
+
 	.navegacion ul {
 		display: none;
 	}

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { Logo } from "./Logo";
 import { NavResp } from "./NavResp";
 import $ from "jquery";
 
@@ -15,10 +14,26 @@ export const Nav = () => {
 		$(window).scrollTop(0);
 	}
 
+	const [click, setClick] = useState(false);
+
+	const handleClick = () => setClick(!click);
+
 	return (
 		<div className="barra" id="barra">
 			<nav className="navegacion contenedor ">
-				<Logo />
+				<h1 className="logo">
+					<img
+						className="logo-img"
+						src="images/LOGO_color_HM.png"
+						alt="Horizonte Medic"
+					/>
+					<i
+						className={
+							click ? "fas fa-bars burguer click" : "fas fa-bars burguer "
+						}
+						onClick={handleClick}
+					></i>
+				</h1>
 				<ul>
 					<li>
 						<NavLink
@@ -125,7 +140,7 @@ export const Nav = () => {
 					</li>
 				</ul>
 			</nav>
-			<NavResp />
+			<NavResp navRespClass={click ? "nav-resp show" : "nav-resp	"} />
 		</div>
 	);
 };
