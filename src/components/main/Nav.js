@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import $ from "jquery";
+import { NavNav } from "./NavNav";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { NavResp } from "./NavResp";
-import $ from "jquery";
 
 export const Nav = () => {
 	window.addEventListener("scroll", () => {
@@ -10,13 +10,14 @@ export const Nav = () => {
 		barra.classList.toggle("sticky", window.scrollY > 0);
 	});
 
-	function up() {
-		$(window).scrollTop(0);
-	}
-
 	const [click, setClick] = useState(false);
 
 	const handleClick = () => setClick(!click);
+
+	function up() {
+		$(window).scrollTop(0);
+		setClick(false);
+	}
 
 	return (
 		<div className="barra" id="barra">
@@ -34,6 +35,9 @@ export const Nav = () => {
 						onClick={handleClick}
 					></i>
 				</h1>
+				<NavNav />
+			</nav>
+			<nav className={click ? "nav-resp show" : "nav-resp	"}>
 				<ul>
 					<li>
 						<NavLink
@@ -43,90 +47,13 @@ export const Nav = () => {
 							to="/"
 							onClick={up}
 						>
-							Inicio
+							<i className="fas fa-home"></i>Inicio
 						</NavLink>
 					</li>
 					<li>
-						<NavLink
-							className="nav-item"
-							to="/nosotros"
-							id="btnNosotros"
-							onClick={up}
-						>
-							Nosotros
-						</NavLink>
-					</li>
-					<li>
-						<a
-							className="nav-item"
-							style={{ cursor: "default" }}
-							href="#Servicios"
-							onclick="return false;"
-						>
-							Servicios
-							<i
-								style={{ paddingLeft: ".5rem" }}
-								className="fas fa-chevron-down"
-							></i>
+						<a href="../views/loginUser.html">
+							<i className="fas fa-user"></i>Mi cuenta
 						</a>
-						<ul>
-							<li>
-								<NavLink to="/servicios-generales" id="btnSG" onClick={up}>
-									Servicios Generales
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/salud-ocupacional" id="btnSO" onClick={up}>
-									Salud Ocupacional
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/laboratorio" id="btnLab" onClick={up}>
-									Laboratorio
-								</NavLink>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							className="nav-item"
-							style={{ cursor: "default" }}
-							href="#"
-							onclick="return false;"
-						>
-							Sedes
-							<i
-								style={{ paddingLeft: ".5rem" }}
-								className="fas fa-chevron-down"
-							></i>
-						</a>
-						<ul>
-							<li>
-								<NavLink to="/sede-pierola" id="btnPierola" onClick={up}>
-									Sede N. Pierola
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/sede-stodominguito" id="btnSD" onClick={up}>
-									Sede Sto. Dominguito
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/sede-huamachuco" id="btnH" onClick={up}>
-									Sede Huamachuco
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to="/sede-huancayo" id="btnHy" onClick={up}>
-									Sede Huancayo
-								</NavLink>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<HashLink smooth className="nav-item" to="#cotizar">
-							Cotizar
-						</HashLink>
 					</li>
 					<li>
 						<NavLink
@@ -135,12 +62,85 @@ export const Nav = () => {
 							id="rCita"
 							onClick={up}
 						>
-							Reserva tu cita
+							<i className="fas fa-calendar-check"></i>Reservar Cita
 						</NavLink>
+					</li>
+					<li>
+						<HashLink smooth className="nav-item" to="#cotizar">
+							<i className="fas fa-dollar-sign"></i>Cotizar
+						</HashLink>
+					</li>
+					<li>
+						<NavLink
+							className="nav-item"
+							to="/nosotros"
+							id="btnNosotros"
+							onClick={up}
+						>
+							<i className="fas fa-hospital-symbol"></i>Nosotros
+						</NavLink>
+					</li>
+					<li>
+						<a
+							style={{ cursor: "default" }}
+							href="#Servicios"
+							onclick="return false;"
+							className="serv-resp"
+						>
+							Servicios<i className="fas fa-chevron-down arrow first"></i>
+						</a>
+						<ul className="serv-show">
+							<li>
+								<a href="#ServiciosGenerales" id="btnSGR">
+									Servicios Generales
+								</a>
+							</li>
+							<li>
+								<a href="#SaludOcupacional" id="btnSOR">
+									Salud Ocupacional
+								</a>
+							</li>
+							<li>
+								<a href="#laboratorio" id="btnLabR">
+									Laboratorio
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							style={{ cursor: "default" }}
+							href="#"
+							onclick="return false;"
+							className="sede-resp"
+						>
+							Sedes<i className="fas fa-chevron-down arrow second"></i>
+						</a>
+						<ul className="sede-show">
+							<li>
+								<a href="#Pierola" id="btnPierolaR">
+									Sede N. Pierola
+								</a>
+							</li>
+							<li>
+								<a href="#StoDominguito" id="btnSDR">
+									Sede Sto. Dominguito
+								</a>
+							</li>
+							<li>
+								<a href="#Huamachuco" id="btnHR">
+									Sede Huamachuco
+								</a>
+							</li>
+							<li>
+								<a href="#Huancayo" id="btnHyR">
+									Sede Huancayo
+								</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</nav>
-			<NavResp navRespClass={click ? "nav-resp show" : "nav-resp	"} />
 		</div>
 	);
 };
