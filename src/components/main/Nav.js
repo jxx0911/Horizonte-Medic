@@ -19,6 +19,16 @@ export const Nav = () => {
 		setClick(false);
 	}
 
+	$(".serv-resp").click(function () {
+		$("nav ul .serv-show").toggleClass("show");
+		$("nav ul .first").toggleClass("rotate");
+	});
+
+	$(".sede-resp").click(function () {
+		$("nav ul .sede-show").toggleClass("show1");
+		$("nav ul .second").toggleClass("rotate");
+	});
+
 	return (
 		<div className="barra" id="barra">
 			<nav className="navegacion contenedor ">
