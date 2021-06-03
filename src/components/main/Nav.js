@@ -6,47 +6,92 @@ import { HashLink } from "react-router-hash-link";
 import { useAutoplayState } from "../../hooks/useAutoplayState";
 
 export const Nav = () => {
+	//autoplay
+	const { autoplay, setAutoplay } = useAutoplayState();
 
-	const { autoPlayOff, autoPlayOn  } = useAutoplayState();
+	//click
+	const [click, setClick] = useState(false);
 
+	//servicio states
+	const [servicioDropdown, setServicioDropdown] = useState(false);
+	const [arrowServicio, setArrowServicio] = useState(false);
+
+	//sede states
+	const [sedeDropdown, setSedeDropdown] = useState(false);
+	const [arrowSede, setArrowSede] = useState(false);
+
+	//navbar sticky
 	window.addEventListener("scroll", () => {
 		let barra = document.querySelector("#barra");
 		barra.classList.toggle("sticky", window.scrollY > 0);
 	});
 
-	const [click, setClick] = useState(false);
-
+	//handleClick para el boton bars
 	const handleClick = () => setClick(!click);
 
-	function upAutoplayOn() {
-		$(window).scrollTop(0);
+	//funcion para cambiar el estado del autoplay, click y mandar un scrollTop al cargar la vista
+	const upAutoplayOn = () => {
+		setAutoplay(true);
 		setClick(false);
-	}
-
-	function upAutoplayOff() {
+		nonState();
 		$(window).scrollTop(0);
+	};
+
+	//funcion para cambiar el estado del autoplay, click y mandar un scrollTop al cargar la vista
+	const upAutoplayOff = () => {
+		setAutoplay(false);
 		setClick(false);
-	}
+		nonState();
+		$(window).scrollTop(0);
+	};
 
-	$(".serv-resp").click(function () {
-		$("nav ul .serv-show").toggleClass("show");
-		$("nav ul .first").toggleClass("rotate");
-	});
+	const upAutoplayOffDropdown = () => {
+		setAutoplay(false);
+		setClick(false);
+		$(window).scrollTop(0);
+	};
 
-	$(".sede-resp").click(function () {
-		$("nav ul .sede-show").toggleClass("show1");
-		$("nav ul .second").toggleClass("rotate");
-	});
+	//funcion para alterar los estados del dropdown servicios
+	const stateService = () => {
+		setServicioDropdown(!servicioDropdown);
+		setArrowServicio(!arrowServicio);
+		//condicional para cambiar los estados del dropdown sede en caso esten activados
+		if (sedeDropdown && arrowSede) {
+			setSedeDropdown(!sedeDropdown);
+			setArrowSede(!arrowSede);
+		}
+	};
+
+	//funcion para alterar los estados del dropdown sede
+	const stateSede = () => {
+		setSedeDropdown(!sedeDropdown);
+		setArrowSede(!arrowSede);
+		//condicional para cambiar los estados del dropdown servicio en caso esten activados
+		if (servicioDropdown && arrowServicio) {
+			setServicioDropdown(!servicioDropdown);
+			setArrowServicio(!arrowServicio);
+		}
+	};
+
+	// funcion para regresar los estados por defecto del dropwdown
+	const nonState = () => {
+		setServicioDropdown(false);
+		setArrowServicio(false);
+		setSedeDropdown(false);
+		setArrowSede(false);
+	};
 
 	return (
 		<div className="barra" id="barra">
 			<nav className="navegacion contenedor ">
 				<h1 className="logo">
-					<img
-						className="logo-img"
-						src="images/LOGO_color_HM.png"
-						alt="Horizonte Medic"
-					/>
+					<NavLink exact to="/" onClick={upAutoplayOn}>
+						<img
+							className="logo-img"
+							src="images/LOGO_color_HM.png"
+							alt="Horizonte Medic"
+						/>
+					</NavLink>
 					<i
 						className={
 							click ? "fas fa-bars burguer click" : "fas fa-bars burguer "
@@ -85,7 +130,12 @@ export const Nav = () => {
 						</NavLink>
 					</li>
 					<li>
-						<HashLink smooth className="nav-item" to="#cotizar">
+						<HashLink
+							smooth
+							className="nav-item"
+							to="#cotizar"
+							onClick={upAutoplayOff}
+						>
 							<i className="fas fa-dollar-sign"></i>Cotizar
 						</HashLink>
 					</li>
@@ -103,58 +153,81 @@ export const Nav = () => {
 						<a
 							style={{ cursor: "default" }}
 							href="#Servicios"
-							onclick="return false;"
+							onClick={stateService}
 							className="serv-resp"
 						>
-							Servicios<i className="fas fa-chevron-down arrow first"></i>
+							Servicios
+							<i
+								className={
+									arrowServicio
+										? "fas fa-chevron-down arrow first"
+										: "fas fa-chevron-down arrow first rotate"
+								}
+							></i>
 						</a>
-						<ul className="serv-show">
+						<ul className={servicioDropdown ? "serv-show show" : "serv-show"}>
 							<li>
-								<a href="#ServiciosGenerales" id="btnSGR">
+								<NavLink
+									to="/servicios-generales"
+									onClick={upAutoplayOffDropdown}
+								>
 									Servicios Generales
-								</a>
+								</NavLink>
 							</li>
 							<li>
-								<a href="#SaludOcupacional" id="btnSOR">
+								<NavLink
+									to="/salud-ocupacional"
+									onClick={upAutoplayOffDropdown}
+								>
 									Salud Ocupacional
-								</a>
+								</NavLink>
 							</li>
 							<li>
-								<a href="#laboratorio" id="btnLabR">
+								<NavLink to="/laboratorio" onClick={upAutoplayOffDropdown}>
 									Laboratorio
-								</a>
+								</NavLink>
 							</li>
 						</ul>
 					</li>
 					<li>
 						<a
 							style={{ cursor: "default" }}
-							href="#"
-							onclick="return false;"
+							href="#Sedes"
+							onClick={stateSede}
 							className="sede-resp"
 						>
-							Sedes<i className="fas fa-chevron-down arrow second"></i>
+							Sedes
+							<i
+								className={
+									arrowSede
+										? "fas fa-chevron-down arrow second"
+										: "fas fa-chevron-down arrow second rotate"
+								}
+							></i>
 						</a>
-						<ul className="sede-show">
+						<ul className={sedeDropdown ? "sede-show show1" : "sede-show"}>
 							<li>
-								<a href="#Pierola" id="btnPierolaR">
+								<NavLink to="/sede-pierola" onClick={upAutoplayOffDropdown}>
 									Sede N. Pierola
-								</a>
+								</NavLink>
 							</li>
 							<li>
-								<a href="#StoDominguito" id="btnSDR">
+								<NavLink
+									to="/sede-stodominguito"
+									onClick={upAutoplayOffDropdown}
+								>
 									Sede Sto. Dominguito
-								</a>
+								</NavLink>
 							</li>
 							<li>
-								<a href="#Huamachuco" id="btnHR">
+								<NavLink to="/sede-huamachuco" onClick={upAutoplayOffDropdown}>
 									Sede Huamachuco
-								</a>
+								</NavLink>
 							</li>
 							<li>
-								<a href="#Huancayo" id="btnHyR">
+								<NavLink to="/sede-huancayo" onClick={upAutoplayOffDropdown}>
 									Sede Huancayo
-								</a>
+								</NavLink>
 							</li>
 						</ul>
 					</li>

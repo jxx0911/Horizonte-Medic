@@ -39,7 +39,7 @@
 		width: 100%;
 		border-left: 3px solid transparent;
 	}
-	.nav-resp > ul > li.active > a {
+	.nav-item > ul > li.active {
 		background: #fff;
 		color: #234187;
 		border-left-color: #234187;
@@ -64,12 +64,12 @@
 		color: #e6e6e6;
 		padding-left: 80px;
 	}
-	.nav-resp ul li.active ul li a {
+	.nav-item ul li.active ul li {
 		background: #234187;
 		color: #fff;
 		border-left-color: transparent;
 	}
-	.nav-resp ul ul li .nav-item:hover {
+	.nav-item ul ul li .nav-item:hover {
 		color: #234187 !important;
 		background: #fff !important;
 		border-left-color: #234187 !important;

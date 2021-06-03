@@ -19,3 +19,21 @@
 	color: #fff;
 	font-size: 4rem;
 }
+
+@media screen and (max-width: 860px) {
+	.laboratorio-title {
+		height: 20vh;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	.laboratorio-title h2 {
+		font-size: 3rem;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.laboratorio-title h2 {
+		font-size: 2.5rem;
+	}
+}
