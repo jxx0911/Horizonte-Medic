@@ -1,11 +1,11 @@
 import React from "react";
-import { Covid } from "./covid/Covid";
 import { Contact } from "./contact/Contact";
+import { CovidRouter } from "../../routers/CovidRouter";
 
 export const Section = () => {
 	return (
 		<>
-			<Covid />
+			<CovidRouter />
 			<Contact />
 		</>
 	);
