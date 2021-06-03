@@ -6,52 +6,64 @@ import img1 from '../../img/slider/Copia_de_seguridad_de_bienvenida-doc-transpar
 import img2 from '../../img/sun-in-the-mountains-landscape-vector.jpg'
 import img3 from '../../img/jarvis.jpg'
 import img4 from '../../img/blur-hospital.jpg'
+import { useAutoplayState } from '../../hooks/useAutoplayState'
+
+
 
 export const Slider = ({ 
-    controles = true, 
-    autoplay = false, 
+    controles = false, 
+    autoPlay = false, 
     velocidad = "500", 
     intervalo = "5000"
 }) => {
 
     const slideshow = useRef(null);
     const intervaloSlideShow = useRef(null);
+    const { autoplay } = useAutoplayState();
+
+    autoPlay = autoplay;
+
+    console.log("dentro del slider" + autoPlay)
 
     const siguiente = useCallback(()=>{
 
-        //Comprobamos que el slideshow tenga elementos
-        if(slideshow.current.children.length > 0){
+        if(slideshow.current){
+                //Comprobamos que el slideshow tenga elementos
+            if(slideshow.current.children.length > 0 ){
 
-            //Obtenemos el primer elemento del slideshow
-            const primerElemento = slideshow.current.children[0];
+                //Obtenemos el primer elemento del slideshow
+                const primerElemento = slideshow.current.children[0];
 
-            //Establecemos la transicion para el slideshow
-            slideshow.current.style.transition = `${velocidad}ms ease-out all`;
-            
-            const tamanoSlide = slideshow.current.children[0].offsetWidth;
+                //Establecemos la transicion para el slideshow
+                slideshow.current.style.transition = `${velocidad}ms ease-out all`;
+                
+                const tamanoSlide = slideshow.current.children[0].offsetWidth;
 
-            //Movemos el slideshow
-            slideshow.current.style.transform = `translateX(-${tamanoSlide}px)`;
+                //Movemos el slideshow
+                slideshow.current.style.transform = `translateX(-${tamanoSlide}px)`;
 
-            const transicion = () => {
-                //Reiniciamos la posicion del slideshow
-                slideshow.current.style.transition = 'none'
-                slideshow.current.style.transform = `translateX(0)`;
+                const transicion = () => {
+                    //Reiniciamos la posicion del slideshow
+                    slideshow.current.style.transition = 'none'
+                    slideshow.current.style.transform = `translateX(0)`;
 
-                //Tomamos el primer elemento y lo mandamos al final
-                slideshow.current.appendChild(primerElemento);
+                    //Tomamos el primer elemento y lo mandamos al final
+                    slideshow.current.appendChild(primerElemento);
 
-                slideshow.current.removeEventListener('transitionend', transicion);
+                    slideshow.current.removeEventListener('transitionend', transicion);
+                }
+
+                //EventListener para cuando termina la animacion
+                slideshow.current.addEventListener('transitionend', transicion);
             }
-
-            //EventListener para cuando termina la animacion
-            slideshow.current.addEventListener('transitionend', transicion);
+        }else{
+            return;
         }
     },[velocidad]);
     
     const anterior = () => {
         console.log("anterior");
-        if(slideshow.current.children.length > 0){
+        if(slideshow.current.children.length > 0 && slideshow.current){
 
             //Obtenemos el ultimo elemento del slideshow
             const index = slideshow.current.children.length - 1;
@@ -67,12 +79,13 @@ export const Slider = ({
                 slideshow.current.style.transition = `${velocidad}ms ease-out all`;
                 slideshow.current.style.transform = `translateX(0)`; 
             }, 30);
+        }else if(!slideshow.current){
+            return;
         }
     }    
 
     useEffect(() => {
-
-        if(autoplay) {
+        if(autoPlay) {
             intervaloSlideShow.current = setInterval(() => {
                 siguiente();
             }, intervalo);
@@ -88,9 +101,11 @@ export const Slider = ({
                     siguiente();
                 }, intervalo);
             });
+        }else{
+            clearInterval(intervaloSlideShow.current);
         }
         
-    }, [autoplay,intervalo,siguiente]);
+    }, [autoPlay,intervalo,siguiente]);
 
     return (
         <ContenedorPrincipal>

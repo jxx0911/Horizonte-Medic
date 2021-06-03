@@ -1,12 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useAutoplayState } from '../../hooks/useAutoplayState'
 import $ from "jquery";
 
 export const NavNav = () => {
-	function up() {
+
+	const { autoplay, setAutoplay  } = useAutoplayState();
+
+	/* function upAutoplayOn() {
 		$(window).scrollTop(0);
+		autoPlayOn();
+		autoPlayOn();
+
 	}
+
+	function upAutoplayOff() {
+		autoPlayOff();
+		autoPlayOff();
+		$(window).scrollTop(0);
+		
+	} */
+
+	console.log("dentro del nav" + autoplay);
 
 	return (
 		<ul>
@@ -16,7 +32,7 @@ export const NavNav = () => {
 					activeClassName="active"
 					className="nav-item"
 					to="/"
-					onClick={up}
+					onClick={()=>setAutoplay(true)}
 				>
 					Inicio
 				</NavLink>
@@ -26,7 +42,7 @@ export const NavNav = () => {
 					className="nav-item"
 					to="/nosotros"
 					id="btnNosotros"
-					onClick={up}
+					onClick={()=>setAutoplay(false)}
 				>
 					Nosotros
 				</NavLink>
@@ -46,17 +62,17 @@ export const NavNav = () => {
 				</a>
 				<ul>
 					<li>
-						<NavLink to="/servicios-generales" id="btnSG" onClick={up}>
+						<NavLink to="/servicios-generales" id="btnSG" onClick={()=>setAutoplay(false)}>
 							Servicios Generales
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/salud-ocupacional" id="btnSO" onClick={up}>
+						<NavLink to="/salud-ocupacional" id="btnSO" onClick={()=>setAutoplay(false)}>
 							Salud Ocupacional
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/laboratorio" id="btnLab" onClick={up}>
+						<NavLink to="/laboratorio" id="btnLab" onClick={()=>setAutoplay(false)}>
 							Laboratorio
 						</NavLink>
 					</li>
@@ -77,22 +93,22 @@ export const NavNav = () => {
 				</a>
 				<ul>
 					<li>
-						<NavLink to="/sede-pierola" id="btnPierola" onClick={up}>
+						<NavLink to="/sede-pierola" id="btnPierola" onClick={()=>setAutoplay(false)}>
 							Sede N. Pierola
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/sede-stodominguito" id="btnSD" onClick={up}>
+						<NavLink to="/sede-stodominguito" id="btnSD" onClick={()=>setAutoplay(false)}>
 							Sede Sto. Dominguito
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/sede-huamachuco" id="btnH" onClick={up}>
+						<NavLink to="/sede-huamachuco" id="btnH" onClick={()=>setAutoplay(false)}>
 							Sede Huamachuco
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/sede-huancayo" id="btnHy" onClick={up}>
+						<NavLink to="/sede-huancayo" id="btnHy" onClick={()=>setAutoplay(false)}>
 							Sede Huancayo
 						</NavLink>
 					</li>
@@ -104,7 +120,7 @@ export const NavNav = () => {
 				</HashLink>
 			</li>
 			<li>
-				<NavLink className="login" to="/reserva-cita" id="rCita" onClick={up}>
+				<NavLink className="login" to="/reserva-cita" id="rCita" onClick={()=>setAutoplay(false)}>
 					Reserva tu cita
 				</NavLink>
 			</li>

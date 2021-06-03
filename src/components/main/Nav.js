@@ -3,8 +3,12 @@ import $ from "jquery";
 import { NavNav } from "./NavNav";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useAutoplayState } from "../../hooks/useAutoplayState";
 
 export const Nav = () => {
+
+	const { autoPlayOff, autoPlayOn  } = useAutoplayState();
+
 	window.addEventListener("scroll", () => {
 		let barra = document.querySelector("#barra");
 		barra.classList.toggle("sticky", window.scrollY > 0);
@@ -14,7 +18,12 @@ export const Nav = () => {
 
 	const handleClick = () => setClick(!click);
 
-	function up() {
+	function upAutoplayOn() {
+		$(window).scrollTop(0);
+		setClick(false);
+	}
+
+	function upAutoplayOff() {
 		$(window).scrollTop(0);
 		setClick(false);
 	}
@@ -55,7 +64,7 @@ export const Nav = () => {
 							activeClassName="active"
 							className="nav-item"
 							to="/"
-							onClick={up}
+							onClick={upAutoplayOn}
 						>
 							<i className="fas fa-home"></i>Inicio
 						</NavLink>
@@ -70,7 +79,7 @@ export const Nav = () => {
 							className="login"
 							to="/reserva-cita"
 							id="rCita"
-							onClick={up}
+							onClick={upAutoplayOff}
 						>
 							<i className="fas fa-calendar-check"></i>Reservar Cita
 						</NavLink>
@@ -85,7 +94,7 @@ export const Nav = () => {
 							className="nav-item"
 							to="/nosotros"
 							id="btnNosotros"
-							onClick={up}
+							onClick={upAutoplayOff}
 						>
 							<i className="fas fa-hospital-symbol"></i>Nosotros
 						</NavLink>
