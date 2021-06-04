@@ -7,7 +7,7 @@
 	border-bottom: 1px solid #dfe5e8;
 	border-top: 5px solid $primary;
 	color: $primary;
-	font-family: "Roboto", sans-serif;
+	font-family: $font1;
 	font-size: 0.8rem;
 	height: 4rem;
 	padding: 10px 0;
@@ -60,7 +60,7 @@
 	.barra.sticky {
 		top: 0;
 		margin: 0 auto;
-		background: #fff;
+		background: $white;
 		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 	}
 }
