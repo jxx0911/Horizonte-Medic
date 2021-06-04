@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Redirect,
+} from "react-router-dom";
 import { Nav } from "../components/main/Nav";
 import { About } from "../components/about/About";
 import { ServGenerales } from "../components/servicios-generales/ServGenerales";
@@ -21,33 +26,34 @@ export const HMWebRouter = () => {
 					<Route path="/nosotros">
 						<About />
 					</Route>
-					<Route path="/servicios-generales">
+					<Route exact path="/servicio/servicios-generales">
 						<ServGenerales />
 					</Route>
-					<Route path="/salud-ocupacional">
+					<Route exact path="/servicio/salud-ocupacional">
 						<SaludOcupacional />
 					</Route>
-					<Route path="/laboratorio">
+					<Route exact path="/servicio/laboratorio">
 						<Laboratorio />
 					</Route>
-					<Route path="/sede-pierola">
+					<Route exact path="/sede/pierola">
 						<Pierola />
 					</Route>
-					<Route path="/sede-stodominguito">
+					<Route exact path="/sede/stodominguito">
 						<StoDomingo />
 					</Route>
-					<Route path="/sede-huamachuco">
+					<Route exact path="/sede/huamachuco">
 						<Huamachuco />
 					</Route>
-					<Route path="/sede-huancayo">
+					<Route exact path="/sede/huancayo">
 						<Huancayo />
 					</Route>
-					<Route path="/reserva-cita">
+					<Route exact path="/reserva-cita">
 						<Reserve />
 					</Route>
 					<Route exact path="/">
 						<Home />
 					</Route>
+					<Redirect to="/" />
 				</Switch>
 			</div>
 		</Router>

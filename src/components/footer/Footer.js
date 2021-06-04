@@ -2,12 +2,7 @@ import React from "react";
 
 export const Footer = () => {
 	return (
-		<footer id="footer" className="footer">
-			<div className="layout">
-				<div className="layout-container">
-					<img src="images/montanaFooterPng.png" alt="" />
-				</div>
-			</div>
+		<footer className="footer">
 			<div className="relleno-footer">
 				<div className="r-f-container">
 					<div className="txt-footer">

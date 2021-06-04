@@ -5,7 +5,6 @@ import { CovidRouter } from "../../routers/CovidRouter";
 export const Section = () => {
 	return (
 		<>
-			<CovidRouter />
 			<Contact />
 		</>
 	);

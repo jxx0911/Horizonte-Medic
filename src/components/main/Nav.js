@@ -4,10 +4,11 @@ import { NavNav } from "./NavNav";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useAutoplayState } from "../../hooks/useAutoplayState";
+import logo from "../../img/LOGO_color_HM.png";
 
 export const Nav = () => {
 	//autoplay
-	const { autoplay, setAutoplay } = useAutoplayState();
+	const { setAutoplay } = useAutoplayState();
 
 	//click
 	const [click, setClick] = useState(false);
@@ -86,11 +87,7 @@ export const Nav = () => {
 			<nav className="navegacion contenedor ">
 				<h1 className="logo">
 					<NavLink exact to="/" onClick={upAutoplayOn}>
-						<img
-							className="logo-img"
-							src="images/LOGO_color_HM.png"
-							alt="Horizonte Medic"
-						/>
+						<img className="logo-img" src={logo} alt="Horizonte Medic" />
 					</NavLink>
 					<i
 						className={
@@ -168,7 +165,7 @@ export const Nav = () => {
 						<ul className={servicioDropdown ? "serv-show show" : "serv-show"}>
 							<li>
 								<NavLink
-									to="/servicios-generales"
+									to="/servicio/servicios-generales"
 									onClick={upAutoplayOffDropdown}
 								>
 									Servicios Generales
@@ -176,14 +173,17 @@ export const Nav = () => {
 							</li>
 							<li>
 								<NavLink
-									to="/salud-ocupacional"
+									to="/servicio/salud-ocupacional"
 									onClick={upAutoplayOffDropdown}
 								>
 									Salud Ocupacional
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/laboratorio" onClick={upAutoplayOffDropdown}>
+								<NavLink
+									to="/servicio/laboratorio"
+									onClick={upAutoplayOffDropdown}
+								>
 									Laboratorio
 								</NavLink>
 							</li>
@@ -207,25 +207,25 @@ export const Nav = () => {
 						</a>
 						<ul className={sedeDropdown ? "sede-show show1" : "sede-show"}>
 							<li>
-								<NavLink to="/sede-pierola" onClick={upAutoplayOffDropdown}>
+								<NavLink to="/sede/pierola" onClick={upAutoplayOffDropdown}>
 									Sede N. Pierola
 								</NavLink>
 							</li>
 							<li>
 								<NavLink
-									to="/sede-stodominguito"
+									to="/sede/stodominguito"
 									onClick={upAutoplayOffDropdown}
 								>
 									Sede Sto. Dominguito
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/sede-huamachuco" onClick={upAutoplayOffDropdown}>
+								<NavLink to="/sede/huamachuco" onClick={upAutoplayOffDropdown}>
 									Sede Huamachuco
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to="/sede-huancayo" onClick={upAutoplayOffDropdown}>
+								<NavLink to="/sede/huancayo" onClick={upAutoplayOffDropdown}>
 									Sede Huancayo
 								</NavLink>
 							</li>

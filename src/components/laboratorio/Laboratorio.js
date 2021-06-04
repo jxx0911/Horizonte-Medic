@@ -1,4 +1,7 @@
 import React from "react";
+import img1 from "../../img/laboratorio/laboratorioClinico.jpg";
+import img2 from "../../img/laboratorio/rayosX.jpg";
+import img3 from "../../img/laboratorio/ultrasonido.jpg";
 
 export const Laboratorio = () => {
 	return (
@@ -8,7 +11,7 @@ export const Laboratorio = () => {
 			</div>
 			<div class="container-tarjetas">
 				<div class="card" style={{ width: "19rem" }}>
-					<img src="images/laboratorio/laboratorioClinico.jpg" alt="" />
+					<img src={img1} alt="" />
 					<h4>Laboratorio Clínico</h4>
 					<p>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -16,7 +19,7 @@ export const Laboratorio = () => {
 					</p>
 				</div>
 				<div class="card" style={{ width: "19rem" }}>
-					<img src="images/laboratorio/rayosX.jpg" alt="" />
+					<img src={img2} alt="" />
 					<h4>Rayos X</h4>
 					<p>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -24,7 +27,7 @@ export const Laboratorio = () => {
 					</p>
 				</div>
 				<div class="card" style={{ width: "19rem" }}>
-					<img src="images/laboratorio/ultrasonido.jpg" alt="" />
+					<img src={img3} alt="" />
 					<h4>Ecografías</h4>
 					<p>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit.

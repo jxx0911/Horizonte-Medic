@@ -59,7 +59,7 @@ export const NavNav = () => {
 				<ul>
 					<li>
 						<NavLink
-							to="/servicios-generales"
+							to="/servicio/servicios-generales"
 							id="btnSG"
 							onClick={upAutoplayOff}
 							activeClassName="active"
@@ -68,12 +68,20 @@ export const NavNav = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/salud-ocupacional" id="btnSO" onClick={upAutoplayOff}>
+						<NavLink
+							to="/servicio/salud-ocupacional"
+							id="btnSO"
+							onClick={upAutoplayOff}
+						>
 							Salud Ocupacional
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/laboratorio" id="btnLab" onClick={upAutoplayOff}>
+						<NavLink
+							to="/servicio/laboratorio"
+							id="btnLab"
+							onClick={upAutoplayOff}
+						>
 							Laboratorio
 						</NavLink>
 					</li>
@@ -83,7 +91,7 @@ export const NavNav = () => {
 				<a
 					className="nav-item"
 					style={{ cursor: "default" }}
-					href="#"
+					href="#Sedes"
 					onclick="return false;"
 				>
 					Sedes
@@ -94,13 +102,13 @@ export const NavNav = () => {
 				</a>
 				<ul>
 					<li>
-						<NavLink to="/sede-pierola" id="btnPierola" onClick={upAutoplayOff}>
+						<NavLink to="/sede/pierola" id="btnPierola" onClick={upAutoplayOff}>
 							Sede N. Pierola
 						</NavLink>
 					</li>
 					<li>
 						<NavLink
-							to="/sede-stodominguito"
+							to="/sede/stodominguito"
 							id="btnSD"
 							onClick={upAutoplayOff}
 						>
@@ -108,19 +116,19 @@ export const NavNav = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/sede-huamachuco" id="btnH" onClick={upAutoplayOff}>
+						<NavLink to="/sede/huamachuco" id="btnH" onClick={upAutoplayOff}>
 							Sede Huamachuco
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/sede-huancayo" id="btnHy" onClick={upAutoplayOff}>
+						<NavLink to="/sede/huancayo" id="btnHy" onClick={upAutoplayOff}>
 							Sede Huancayo
 						</NavLink>
 					</li>
 				</ul>
 			</li>
 			<li>
-				<HashLink smooth className="nav-item" to="#cotizar">
+				<HashLink smooth className="nav-item cotizar" to="#cotizar">
 					Cotizar
 				</HashLink>
 			</li>

@@ -1,4 +1,5 @@
 import React from "react";
+import img from "../../img/ocupacional.jpg";
 
 export const SaludOcupacional = () => {
 	return (
@@ -8,7 +9,7 @@ export const SaludOcupacional = () => {
 			</div>
 			<div className="salud-ocupacional-container">
 				<div className="s-o-img">
-					<img src="images/ocupacional.jpg" alt="" />
+					<img src={img} alt="" />
 				</div>
 				<div className="s-o-info">
 					<ul>
