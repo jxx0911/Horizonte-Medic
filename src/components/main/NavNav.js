@@ -17,8 +17,6 @@ export const NavNav = () => {
 		$(window).scrollTop(0);
 	}
 
-	console.log("dentro del nav" + autoplay);
-
 	return (
 		<ul>
 			<li>

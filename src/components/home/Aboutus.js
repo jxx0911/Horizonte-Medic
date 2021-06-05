@@ -2,9 +2,9 @@ import React from "react";
 
 export const Aboutus = () => {
 	return (
-		<div class="we">
-			<div class="we-container">
-				<div class="we-info">
+		<div className="we">
+			<div className="we-container">
+				<div className="we-info">
 					<h2>¿Quienes Somos?</h2>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
@@ -13,10 +13,10 @@ export const Aboutus = () => {
 						doloribus officiis nisi.
 					</p>
 					<button>
-						<i class="fas fa-arrow-alt-circle-right"></i>MÁS INFORMACIÓN
+						<i className="fas fa-arrow-alt-circle-right"></i>MÁS INFORMACIÓN
 					</button>
 				</div>
-				<div class="we-img">
+				<div className="we-img">
 					<img src="images/doctors.png" alt="" />
 				</div>
 			</div>

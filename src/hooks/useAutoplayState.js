@@ -1,10 +1,9 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-export const useAutoplayState = ( ) => {
+export const useAutoplayState = () => {
+	const [autoplay, setAutoplay] = useState(true);
 
-    const [autoplay, setAutoplay] = useState(true);
-
-    /* const autoPlayOff = () => {
+	/* const autoPlayOff = () => {
         setAutoplay(false);
         console.log("dentro del hook: " + autoplay);
     }
@@ -13,15 +12,11 @@ export const useAutoplayState = ( ) => {
         setAutoplay(true);
         console.log("dentro del hook: " + autoplay);
     } */
-    
-    console.log("dentro del hook" + autoplay);
 
-    return {
-        autoplay,
-        setAutoplay 
-        /* autoPlayOn,
+	return {
+		autoplay,
+		setAutoplay,
+		/* autoPlayOn,
         autoPlayOff */
-    };
-        
-    
-}
+	};
+};
